@@ -27,7 +27,7 @@ if st.button("Analyze Sentiment"):
         confidence = max(probabilities)
         
         if prediction.lower() == 'positive':
-            st.success(f"😊 Positive, (Confidence: {confidence:.2f})", icon="✅")
+            st.success(f"😊 Positive, (Confidence: {confidence:.2f})")
         elif prediction.lower() == "negative":
             st.error(f"😠 Negative (Confidence: {confidence:.2f})")
         else:
