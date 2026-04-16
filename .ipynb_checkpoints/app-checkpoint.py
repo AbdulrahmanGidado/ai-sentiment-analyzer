@@ -25,6 +25,9 @@ if st.button("Analyze Sentiment"):
         prediction = model.predict(vector)[0]
         probabilities = model.predict_proba(vector)[0]
         confidence = max(probabilities)
+
+        if confidence < 0.55:
+            prediction = "neutral"
         
         if prediction.lower() == 'positive':
             st.success(f"😊 Positive, (Confidence: {confidence:.2f})")
