@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 
 # Load model and vectorizer
-model = joblib.load("sentiment-model.pkl")
+model = joblib.load("model.pkl")
 vectorizer = joblib.load("tfidf-vectorizer.pkl")
 
 # Page config
