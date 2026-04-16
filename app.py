@@ -5,6 +5,15 @@ import joblib
 model = joblib.load("model.pkl")
 vectorizer = joblib.load("tfidf-vectorizer.pkl")
 
+# Clean function
+def clean(text):
+    text = str(text).lower()                 # Standardize to lowercase
+    text = re.sub(r'http\S+|www\S+|https\S+', '', text) # Remove URLs
+    text = re.sub(r'@\w+', '', text)          # Remove Twitter handles (@mentions)
+    text = re.sub(r'[^a-z\s]', ' ', text)     # Remove special characters and numbers
+    text = ' '.join(text.split())             # Remove extra whitespace
+    return text
+
 # Page config
 st.set_page_config(page_title="Sentiment Analyzer", page_icon="💬")
 
