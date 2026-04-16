@@ -21,7 +21,8 @@ if st.button("Analyze Sentiment"):
     if user_input.strip() == "":
         st.warning("Please enter some text.")
     else:
-        vector = vectorizer.transform([user_input])
+        cleaned_text = clean(user_input)
+        vector = vectorizer.transform([cleaned_text])
         prediction = model.predict(vector)[0]
         probabilities = model.predict_proba(vector)[0]
         confidence = max(probabilities)
