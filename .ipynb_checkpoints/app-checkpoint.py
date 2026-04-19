@@ -8,7 +8,7 @@ import re
 model = joblib.load("model.pkl")
 vectorizer = joblib.load("tfidf-vectorizer.pkl")
 
-@st.cache_resources
+@st.cache_resource
 def load_transformer():
     return pipeline('sentiment-analysis', model="cardiffnlp/twitter-roberta-base-sentiment")
 
@@ -59,3 +59,5 @@ if st.button("Analyze Sentiment"):
             st.error(f"😠 Negative (Confidence: {confidence:.2f})")
         else:
             st.info(f"😐 Neutral (Confidence: {confidence:.2f})")
+
+
