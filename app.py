@@ -54,10 +54,10 @@ if st.button("Analyze Sentiment"):
         
         
         if label.lower() == 'positive':
-            st.success(f"😊 Positive, (Confidence: {confidence:.2f})")
+            st.success(f"😊 Positive, (Confidence: {score:.2f})")
         elif label.lower() == "negative":
-            st.error(f"😠 Negative (Confidence: {confidence:.2f})")
+            st.error(f"😠 Negative (Confidence: {score:.2f})")
         else:
-            st.info(f"😐 Neutral (Confidence: {confidence:.2f})")
+            st.info(f"😐 Neutral (Confidence: {score:.2f})")
 
 
